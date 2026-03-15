@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
     <link
       rel="icon"
       type="image/png"
@@ -14,31 +13,95 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="rating-card rating-state">
-      <div class="rating-img">
-        <img src="images/icon-star.svg" alt="rating image" />
-      </div>
-      <h1>How did we do?</h1>
-      <p>
-        Please let us know how we did with your support request. All feedback is
-        appreciated to help us improve our offering!
-      </p>
-      <div class="ratings">
-        <button class="rating-btn">1</button>
-        <button class="rating-btn">2</button>
-        <button class="rating-btn">3</button>
-        <button class="rating-btn">4</button>
-        <button class="rating-btn">5</button>
-      </div>
-      <button class="submit-btn">Submit</button>
-    </div>
+    <main class="page">
+      <div class="rating-card rating-state">
+        <div class="rating-img">
+          <img src="images/icon-star.svg" alt="" />
+        </div>
 
-    <div class="rating-card thankyou-state">
-      <img src="images/illustration-thank-you.svg" alt="" class="thankyou-img">
-      <p class="rating-feedback">You selected 4 out of 5</p>
-      <h1>Thank you!</h1>
-      <p>We appreciate you taking the time to give a rating. If you ever need support, don't hesitate to get in touch</p>
-    </div>
+        <h1>How did we do?</h1>
+
+        <p>
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+
+        <div
+          class="ratings"
+          role="radiogroup"
+          aria-label="Choose a rating from 1 to 5"
+        >
+          <button
+            class="rating-btn"
+            type="button"
+            role="radio"
+            aria-checked="false"
+            aria-label="Rate 1"
+          >
+            1
+          </button>
+          <button
+            class="rating-btn"
+            type="button"
+            role="radio"
+            aria-checked="false"
+            aria-label="Rate 2"
+          >
+            2
+          </button>
+          <button
+            class="rating-btn"
+            type="button"
+            role="radio"
+            aria-checked="false"
+            aria-label="Rate 3"
+          >
+            3
+          </button>
+          <button
+            class="rating-btn"
+            type="button"
+            role="radio"
+            aria-checked="false"
+            aria-label="Rate 4"
+          >
+            4
+          </button>
+          <button
+            class="rating-btn"
+            type="button"
+            role="radio"
+            aria-checked="false"
+            aria-label="Rate 5"
+          >
+            5
+          </button>
+        </div>
+
+        <button class="submit-btn" type="button">Submit</button>
+      </div>
+
+      <div
+        class="rating-card thankyou-state hidden"
+        role="status"
+        aria-live="polite"
+      >
+        <img
+          src="images/illustration-thank-you.svg"
+          alt=""
+          class="thankyou-img"
+        />
+
+        <p class="rating-feedback">You selected 4 out of 5</p>
+
+        <h1>Thank you!</h1>
+
+        <p>
+          We appreciate you taking the time to give a rating. If you ever need
+          support, don’t hesitate to get in touch.
+        </p>
+      </div>
+    </main>
 
     <script src="script.js"></script>
   </body>

@@ -1,26 +1,34 @@
-const buttons = document.querySelectorAll('.rating-btn')
-const submitBtn = document.querySelector('.submit-btn')
-const ratingState = document.querySelector('.rating-state')
-const thankyouState = document.querySelector('.thankyou-state')
-const ratingFeedback = document.querySelector('.rating-feedback')
+const ratingButtons = document.querySelectorAll(".rating-btn");
+const submitButton = document.querySelector(".submit-btn");
+const ratingState = document.querySelector(".rating-state");
+const thankyouState = document.querySelector(".thankyou-state");
+const ratingFeedback = document.querySelector(".rating-feedback");
 
-let selectedRating = null
+let selectedRating = null;
 
+// Handle rating selection
+ratingButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    ratingButtons.forEach((btn) => {
+      btn.classList.remove("active");
+      btn.setAttribute("aria-checked", "false");
+    });
 
-buttons.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-        buttons.forEach((btn) => btn.classList.remove('active'))
-        btn.classList.add('active')
-        selectedRating = btn.textContent
-    }
-    )
-})
+    button.classList.add("active");
+    button.setAttribute("aria-checked", "true");
 
-submitBtn.addEventListener('click', (e) => {
-    if (!selectedRating) return
+    selectedRating = button.textContent.trim();
+  });
+});
 
-    ratingFeedback.textContent = `You selected ${selectedRating} out of 5`
-    
-    ratingState.style.display = "none"
-    thankyouState.style.display = "flex"
-})
+// Handle submit
+submitButton.addEventListener("click", () => {
+  if (!selectedRating) {
+    return;
+  }
+
+  ratingFeedback.textContent = `You selected ${selectedRating} out of 5`;
+
+  ratingState.classList.add("hidden");
+  thankyouState.classList.remove("hidden");
+});
