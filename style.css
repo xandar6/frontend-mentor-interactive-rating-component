@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
 /* Basic CSS reset */
 *,
 *::before,
@@ -30,7 +31,7 @@ body {
 
 body {
     line-height: 1.4;
-    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: "Overpass", sans-serif;
     min-height: 100vh;
     background-color: var(--color-neutral-grey-950);
     padding-inline: 1rem;
@@ -43,6 +44,10 @@ body {
 button {
   all: unset;
   cursor: pointer;
+}
+
+h1{
+    font-size: 28px;
 }
 
 .rating-card {
@@ -83,7 +88,8 @@ p {
 
 .rating-btn{
     background-color: hsla(211, 21%, 21%, 0.938);
-    padding: 1rem;
+    padding: 0.8rem;
+    margin: 0;
     border-radius: 50%;
     width: 20px;
     height: 20px;
